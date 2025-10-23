@@ -144,4 +144,4 @@ If you use this code in your research, please cite the following publication:
 <br>by M. Levin, Cellular and Molecular Life Sciences 2023, **80**, 142; https://doi.org/10.1007/s00018-023-04853-5
 
 [^3]: "_Evolutionary Implications of Self-Assembling Cybernetic Materials with Collective Problem-Solving Intelligence at Multiple Scales_", 
-<br>by B. Hartl, S. Risi, M. Levin, Entropy 2024, **26**(7), 532; https://doi.org/10.1007/s00018-023-04790-z
+<br>by B. Hartl, S. Risi, M. Levin, Entropy 2024, **26**(7), 532; https://doi.org/10.3390/e26070532
