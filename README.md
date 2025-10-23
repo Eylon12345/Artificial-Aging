@@ -1,4 +1,4 @@
-# Evolutionary Implications of Multi-Scale Intelligence
+# Multi-Scale Evolutionary Development and Cognition
 ## Overview
 A python implementation for cognitive evolution related to the _Technological Approach to Mind Everywhere_ (TAME) [^1] and _Darwin's Agential Material_ frameworks [^2], covering the following references:
 
