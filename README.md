@@ -1,19 +1,6 @@
-**# Evolutionary Implications of Multi-Scale Intelligence
+# Evolutionary Implications of Multi-Scale Intelligence
 ## Overview
 A python implementation for cognitive evolution related to the _Technological Approach to Mind Everywhere_ (TAME) [^1] and _Darwin's Agential Material_ frameworks [^2], covering the following references:
-
-### References
-[^1]: "_Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds_",
-<br>by M. Levin, Frontiers in Systems Neuroscience 2022, **16**; https://doi.org/10.3389/fnsys.2022.768201
-
-[^2]: "_Darwin’s agential materials: evolutionary implications of multiscale competency in developmental biology_",
-<br>by M. Levin, Cellular and Molecular Life Sciences 2023, **80**, 142; https://doi.org/10.1007/s00018-023-04853-5
-
-[^3]: "_Evolutionary Implications of Self-Assembling Cybernetic Materials with Collective Problem-Solving Intelligence at Multiple Scales_", 
-<br>by B. Hartl, S. Risi, M. Levin, Entropy 2024, **26**(7), 532; https://doi.org/10.1007/s00018-023-04790-z
-
-[^4]: "_Aging as a Loss of Goal-Directedness: An Evolutionary Simulation and Analysis Unifying Regeneration with Anatomical Rejuvenation_", 
-<br> by L. Pio-Lopez$^\dagger$, B. Hartl$^\dagger$ M. Levin, Advanced Science 2025, https://doi.org/10.1002/advs.202509872 ($^\dagger$ equal contribution)
 
 ### Project Structure
 - Experiments and implementations to publications are located in the [./examples](examples) directory
@@ -99,4 +86,18 @@ If you use this code in your research, please cite the following publication:
     article-number = {532},
     doi = {10.3390/e26070532}
 }
-```**
+```
+
+
+## References
+[^1]: "_Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds_",
+<br>by M. Levin, Frontiers in Systems Neuroscience 2022, **16**; https://doi.org/10.3389/fnsys.2022.768201
+
+[^2]: "_Darwin’s agential materials: evolutionary implications of multiscale competency in developmental biology_",
+<br>by M. Levin, Cellular and Molecular Life Sciences 2023, **80**, 142; https://doi.org/10.1007/s00018-023-04853-5
+
+[^3]: "_Evolutionary Implications of Self-Assembling Cybernetic Materials with Collective Problem-Solving Intelligence at Multiple Scales_", 
+<br>by B. Hartl, S. Risi, M. Levin, Entropy 2024, **26**(7), 532; https://doi.org/10.1007/s00018-023-04790-z
+
+[^4]: "_Aging as a Loss of Goal-Directedness: An Evolutionary Simulation and Analysis Unifying Regeneration with Anatomical Rejuvenation_", 
+<br> by L. Pio-Lopez$^\dagger$, B. Hartl$^\dagger$ M. Levin, Advanced Science 2025, https://doi.org/10.1002/advs.202509872 ($^\dagger$ equal contribution)
