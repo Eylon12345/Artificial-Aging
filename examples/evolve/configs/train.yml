@@ -1,0 +1,52 @@
+# WORLD CONFIG
+world_config:
+  max_steps:  25   # number of developmental steps
+  n_episodes:  8   # number of episodes performed by each agent (an episode is a full developmental cycle)
+  render: False
+  verbose: False
+# ES-CONFIG
+solver_config:
+  aggregation: mean        # how to aggregate the fitness of different episodes, usually, we take the mean, but we might choose "min" or "max"
+  verbose: True            # whether to print the ES progress to the terminal
+  file_name: agent.yml     # filename where to save the best agent
+  checkpoint_interval: 25  # save the best agent every 25 generations in a checkpoint file
+  es: CMAES                # which ES to use, CMAES (or SimpleGA, but requires different opts)
+  size: 100                # population size
+  generations: 2000        # number of generations
+  opts:                    # ES options
+    sigma_init: 0.0625     # initial sigma, i.e., standard deviation of parameters of original population
+    CMA_elitist: false     # elitist strategy, false is the default
+    AdaptSigma: false      # adaptive sigma, false is the default
+    reg: "l2"              # regularization, "l2" is the default (tries to maintain the parameters close to 0)
+    weight_decay: 0.0001   # weight decay for "l2" regularization
+# NCA CONFIG
+state_config:
+  channels:                # all channels of a cell from 0, 1, 2, 3
+    type: [0, 3]           # cell-type channel as indices from 0, 1, 2
+    hidden: [3, 4]         # hidden channel as indices from 3
+  bounds: [-3, 3]          # bounds of the cell states
+  noise_level: 0.125       # noise level applied to the cell states
+grid_config:
+  cls: SquareGrid            # square grid: 8 neighbors, 1 central cell
+  locate: musepy.util.geometric
+  bounds: "fbc"              # fixed boundary conditions
+  rigid: True                # no overlapping cells
+task_config:
+  cls: StateTask             # task for the agent, could also be "Curriculum"
+  locate: musepy.corpus      # the location of the task-module
+  individual_cost: 1.0       # +1 reward (-1 cost) for each correct (incorrect) cell-type at certain location, non-cumulative
+  stagnation_cost: 0.5       # weight to discount stagnating patterns
+  completion_reward: 0.25    # reward for each step for completing the task
+  one_hot: True              # one-hot encoding of the cell-types (argmax)
+  alive_threshold: 0         # threshold used to initialize cells as "alive", don't change for now
+  schedule: "random"         # -> this is, where we could change the schedule for transfer learning
+  palette: &palette ["dodgerblue", "white", "red"]
+render_config:
+  palette: *palette
+  ion: False
+  show: True
+# OPTIONAL AGENT KWARGS:
+agent_config:
+  # CELLULAR COMPETENCY: allow cell-state updates with `{SMPL}`% probability
+  sampling: 0.5
+  sampling_scale: -1.0

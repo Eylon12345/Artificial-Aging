@@ -1,0 +1,6 @@
+max_steps: 60
+n_episodes: 4
+render: false
+verbose: false
+agent: agents/smiley_16x16/agent.yml
+env: agents/smiley_16x16/env.yml

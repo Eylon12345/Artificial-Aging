@@ -1,0 +1,6 @@
+cls: Render
+locate: musepy.visualize
+palette: &palette ["dodgerblue", "white", "red"]
+colors:
+  type: *palette
+color_bg: True

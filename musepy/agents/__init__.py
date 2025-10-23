@@ -1,0 +1,2 @@
+from .hybrid_neural_cellular_automaton_agent import HybridNCAAgent
+from .genetic_NCA_agent import GeneNCAAgent

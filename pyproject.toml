@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "muse"
+version = "0.1.0"
+authors = [
+    { name="Ben Hartl", email="hartl.bene.software@gmail.com" },
+]
+description = "MUSE - A framework for Multi-Scale Evolutionary Development and Cognition"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Tufts Open Source License Rider v.1",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Artificial Life",
+    "Topic :: Scientific/Engineering :: Aging",
+    "Topic :: Scientific/Engineering :: Aging as Loss of Goal-Directedness",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+dependencies = [
+    # IO
+    "argh",
+    "PyYAML",
+    # math
+    "numpy",
+    # data
+    "pandas",
+    # render
+    "matplotlib",
+    # ML
+    "torch >= 2.0",
+    # "mindcraft ~= 0.1",
+    "mindcraft @ git+https://github.com/bhartl/NeurEvo.git@c93ac2c9",
+]
+
+[project.optional-dependencies]
+examples = [
+    "jupyter",
+    "ipywidgets ~= 8.1.1",
+]
+
+acc = [
+    "mindcraft[acc] @ git+https://github.com/bhartl/NeurEvo.git@c93ac2c9",
+]
+
+[project.urls]
+Homepage = "https://https://github.com/bhartl/muse"
+
+
+[tool.setuptools]
+py-modules = ["musepy"]
+
+# Tell setuptools how to find packages
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["musepy*"]
+exclude = ["examples*"]

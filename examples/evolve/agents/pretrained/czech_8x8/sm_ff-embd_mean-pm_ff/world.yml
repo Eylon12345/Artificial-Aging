@@ -1,0 +1,6 @@
+max_steps: 25
+n_episodes: 4
+render: false
+verbose: false
+agent: data/czech_8x8/sm_ff-embd_mean-pm_ff/agent.yml
+env: data/czech_8x8/sm_ff-embd_mean-pm_ff/env.yml

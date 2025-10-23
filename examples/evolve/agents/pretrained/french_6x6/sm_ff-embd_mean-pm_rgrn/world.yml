@@ -1,0 +1,6 @@
+max_steps: 25
+n_episodes: 4
+render: false
+verbose: false
+agent: data/french_6x6/sm_ff-embd_mean-pm_rgrn/agent.yml
+env: data/french_6x6/sm_ff-embd_mean-pm_rgrn/env.yml
