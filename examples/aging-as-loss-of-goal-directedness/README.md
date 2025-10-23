@@ -73,7 +73,7 @@ If you use this code in your research, please cite the following publication:
 
 ## References
 [^1]: "_Aging as a Loss of Goal-Directedness: An Evolutionary Simulation and Analysis Unifying Regeneration with Anatomical Rejuvenation_", 
-<br> by L. Pio-Lopez$^\dagger$, B. Hartl$^\dagger$ M. Levin, Advanced Science 2025, https://doi.org/10.1002/advs.202509872 ($^\dagger$ equal contribution)
+<br> by L. Pio-Lopez*, B. Hartl* M. Levin, Advanced Science 2025, https://doi.org/10.1002/advs.202509872 (* equal contribution)
 
 [^2]: "_Evolutionary Implications of Self-Assembling Cybernetic Materials with Collective Problem-Solving Intelligence at Multiple Scales_", 
 <br>by B. Hartl, S. Risi, M. Levin, Entropy 2024, **26**(7), 532; https://doi.org/10.1007/s00018-023-04790-z
