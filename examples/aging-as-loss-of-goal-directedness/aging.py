@@ -13,6 +13,7 @@ def rollout_lifetime(world_config,
                      sensitivity_susceptibility=1.0,  # fraction of cells than can lose sensitivity to neighbors
                      memory_reset_on_completion: bool = False,
                      memory_reset_cooldown: int = 0,
+                     memory_reset_match_threshold: float = 1.0,
                      max_steps=1000, num_episodes=10, log_fields=("reward",), log_foos=None, verbose=False, render=False,
                      stagnation_cost=False, completion_reward=False,
                      seed=None,
@@ -55,7 +56,9 @@ def rollout_lifetime(world_config,
             return
 
         state = world.env.task.get_state(world.env)
-        reached_target = np.array_equal(world.env.task.target_state, state)
+        target_state = world.env.task.target_state
+        match_fraction = np.mean(np.all(state == target_state, axis=-1))
+        reached_target = match_fraction >= memory_reset_match_threshold
         if not reached_target:
             return
 
@@ -134,6 +137,7 @@ def rollout_lifetime(world_config,
     data["memory_reset_on_completion"] = memory_reset_on_completion
     data["memory_reset_cooldown"] = memory_reset_cooldown
     data["memory_reset_count"] = memory_reset_stats["count"]
+    data["memory_reset_match_threshold"] = memory_reset_match_threshold
     return data
 
 
@@ -221,18 +225,21 @@ def test_sensor_sensitivity_susceptibility(max_steps=100, num_episodes=5, sc=0.3
 
 
 def test_memory_reset_on_completion(max_steps=250, num_episodes=5, memory_reset_cooldown=25,
+                                    memory_reset_match_threshold=1.0,
                                     world_config="agents/smiley_16x16/world.yml"):
     data = rollout_lifetime(world_config=world_config,
                             max_steps=max_steps,
                             num_episodes=num_episodes,
                             memory_reset_on_completion=True,
                             memory_reset_cooldown=memory_reset_cooldown,
+                            memory_reset_match_threshold=memory_reset_match_threshold,
                             log_fields=('reward', 'state'),
                             log_foos={'state': 'observation[:, 0].reshape(16, 16, -1)'},
                             verbose=True,
                             render=True,
                             )
     print(f"memory resets triggered: {data['memory_reset_count']}")
+    print(f"memory reset threshold: {data['memory_reset_match_threshold']}")
 
 
 if __name__ == "__main__":

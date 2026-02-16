@@ -257,9 +257,11 @@ so this is a natural place to implement lifespan-extending strategies without ed
 A simple intervention variant is now available in `rollout_lifetime(...)`:
 - `memory_reset_on_completion=True`
 - `memory_reset_cooldown=<int>`
+- `memory_reset_match_threshold=<float in [0,1]>`
 
 Behavior:
-- At each step, if the tissue exactly matches target, reset policy-module recurrent memory,
+- At each step, compute the fraction of grid cells whose type matches target,
+- if this fraction is >= `memory_reset_match_threshold`, reset policy-module recurrent memory,
 - do nothing otherwise,
 - enforce optional cooldown between resets.
 
